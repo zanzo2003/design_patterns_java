@@ -1,16 +1,14 @@
-import DecoratorPattern.*;
-import DecoratorPattern.Concrete.FarmhousePizza;
-import DecoratorPattern.Decorator.CheeseDecorator;
-import DecoratorPattern.Decorator.ChickenDecorator;
-import DecoratorPattern.Decorator.PizzaDecorator;
+import Singlton.Logger;
+
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Pizza pizza1 = new FarmhousePizza();
-        PizzaDecorator customizedPizza = new ChickenDecorator(new CheeseDecorator(pizza1));
-        System.out.println(customizedPizza.getDescription() + " and Price is " + customizedPizza.getPrice() + " only!!");
+        Logger loggerV1 = Logger.getInstance();
+        Logger loggerV2 = Logger.getInstance();
+
+        System.out.println("DO BOTH HAVE SAME MEMORY LOCATION : " + (loggerV1 == loggerV2));
 
     }
 
