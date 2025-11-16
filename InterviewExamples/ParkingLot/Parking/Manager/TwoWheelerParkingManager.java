@@ -43,12 +43,12 @@ public class TwoWheelerParkingManager implements ParkingSpotManager{
     }
 
     @Override
-    public void parkVehicle(Vehicle vehicle) {
+    public ParkingSpot parkVehicle(Vehicle vehicle) {
         if(!validateVehicle(vehicle)) throw new IllegalArgumentException("Invalid Vehicle Type");
         ParkingSpot parkingSpot = findParkingSpot();
         if (parkingSpot != null) parkingSpot.setParkedVehicle(vehicle);
         else throw new RuntimeException("No parking spots available!!");
-        return ;
+        return parkingSpot;
     }
 
     @Override

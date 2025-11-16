@@ -11,7 +11,7 @@ public interface ParkingSpotManager {
 
     ParkingSpot findParkingSpot();
 
-    void parkVehicle(Vehicle vehicle);
+    ParkingSpot parkVehicle(Vehicle vehicle);
 
     void removeVehicle(Vehicle vehicle);
 }
