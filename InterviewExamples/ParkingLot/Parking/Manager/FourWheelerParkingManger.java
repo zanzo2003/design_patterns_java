@@ -1,28 +1,25 @@
 package InterviewExamples.ParkingLot.Parking.Manager;
 
 import InterviewExamples.ParkingLot.Parking.Manager.Strategy.ParkingStrategy;
+import InterviewExamples.ParkingLot.Parking.Spots.FourWheelerParkingSpot;
 import InterviewExamples.ParkingLot.Parking.Spots.ParkingSpot;
-import InterviewExamples.ParkingLot.Parking.Spots.TwoWheelerParkingSpot;
 import InterviewExamples.ParkingLot.Vehicles.Vehicle;
 import InterviewExamples.ParkingLot.Vehicles.VehicleType;
 
 import java.util.List;
 
-/*
-    Similarly to this we will have a parking manager for each vehicle type.
-    It will manger all the application processes for the parking lot system.
- */
+public class FourWheelerParkingManger implements ParkingSpotManager{
 
-public class TwoWheelerParkingManager implements ParkingSpotManager{
 
     private List<ParkingSpot> parkingSpots;
     private ParkingStrategy parkingStrategy;
 
-    public TwoWheelerParkingManager(List<ParkingSpot> parkingSpots, ParkingStrategy parkingStrategy){
+    public FourWheelerParkingManger(List<ParkingSpot> parkingSpots, ParkingStrategy parkingStrategy){
         if(!validateListParkingSpot(parkingSpots)) throw new IllegalArgumentException("Invalid Parking Spot Type");
         this.parkingSpots = parkingSpots;
         this.parkingStrategy = parkingStrategy;
     }
+
 
     @Override
     public void addParkingSpot(ParkingSpot parkingSpot) {
@@ -30,11 +27,13 @@ public class TwoWheelerParkingManager implements ParkingSpotManager{
             this.parkingSpots.add(parkingSpot);
         }
         else throw new IllegalArgumentException("Invalid Parking Spot Type");
+
     }
 
     @Override
     public void removeParkingSpot(ParkingSpot parkingSpot) {
         this.parkingSpots.remove(parkingSpot);
+
     }
 
     @Override
@@ -53,19 +52,18 @@ public class TwoWheelerParkingManager implements ParkingSpotManager{
 
     @Override
     public void removeVehicle(Vehicle vehicle) {
-
         for(ParkingSpot parkingSpot: parkingSpots){
             if(!parkingSpot.isEmpty() && parkingSpot.getParkedVehicle().equals(vehicle)){
                 parkingSpot.removeParkedVehicle();
                 break;
             }
         }
-        return ;
+        return;
     }
 
 
     private boolean validateVehicle( Vehicle vehicle){
-        return vehicle.getVehicleType().equals(VehicleType.TwoWheeler);
+        return vehicle.getVehicleType().equals(VehicleType.FourWheeler);
     }
 
     private boolean validateListParkingSpot(List<ParkingSpot> parkingSpots){
@@ -74,6 +72,6 @@ public class TwoWheelerParkingManager implements ParkingSpotManager{
     }
 
     private boolean validateParkingSpot(ParkingSpot parkingSpot){
-        return parkingSpot instanceof TwoWheelerParkingSpot;
+        return parkingSpot instanceof FourWheelerParkingSpot;
     }
 }
