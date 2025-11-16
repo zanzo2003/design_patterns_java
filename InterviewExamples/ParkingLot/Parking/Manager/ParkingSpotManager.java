@@ -1,6 +1,6 @@
 package InterviewExamples.ParkingLot.Parking.Manager;
 
-import InterviewExamples.ParkingLot.Parking.Spots.ParkingSpot;
+import InterviewExamples.ParkingLot.Parking.Spot.ParkingSpot;
 import InterviewExamples.ParkingLot.Vehicles.Vehicle;
 
 public interface ParkingSpotManager {

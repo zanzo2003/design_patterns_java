@@ -1,6 +1,6 @@
-package InterviewExamples.ParkingLot.Parking.Manager.Strategy;
+package InterviewExamples.ParkingLot.Parking.Strategy;
 
-import InterviewExamples.ParkingLot.Parking.Spots.ParkingSpot;
+import InterviewExamples.ParkingLot.Parking.Spot.ParkingSpot;
 import java.util.List;
 
 public class ParkingStrategyImpl implements ParkingStrategy{

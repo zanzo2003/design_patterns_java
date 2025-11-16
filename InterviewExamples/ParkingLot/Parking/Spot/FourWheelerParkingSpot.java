@@ -1,4 +1,4 @@
-package InterviewExamples.ParkingLot.Parking.Spots;
+package InterviewExamples.ParkingLot.Parking.Spot;
 
 import InterviewExamples.ParkingLot.Vehicles.Vehicle;
 import InterviewExamples.ParkingLot.Vehicles.VehicleType;
