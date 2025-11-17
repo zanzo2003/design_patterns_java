@@ -52,15 +52,15 @@ public class TwoWheelerParkingManager implements ParkingSpotManager{
     }
 
     @Override
-    public void removeVehicle(Vehicle vehicle) {
-
+    public ParkingSpot removeVehicle(Vehicle vehicle) {
+        ParkingSpot spot = null;
         for(ParkingSpot parkingSpot: parkingSpots){
             if(!parkingSpot.isEmpty() && parkingSpot.getParkedVehicle().equals(vehicle)){
                 parkingSpot.removeParkedVehicle();
-                break;
+                spot = parkingSpot;
             }
         }
-        return ;
+        return spot;
     }
 
 
