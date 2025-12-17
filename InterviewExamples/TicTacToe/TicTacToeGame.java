@@ -1,20 +1,19 @@
 package InterviewExamples.TicTacToe;
 
 import InterviewExamples.TicTacToe.Board.PlayingBoard;
+import InterviewExamples.TicTacToe.Helper.Pair;
 import InterviewExamples.TicTacToe.PlayingPiece.OPlayingPiece;
-import InterviewExamples.TicTacToe.PlayingPiece.PieceType;
 import InterviewExamples.TicTacToe.PlayingPiece.XPlayingPiece;
 
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TicTacToeGame {
 
-    private  Deque<Player> playerQueue = new LinkedList<>();
-
+    private final Deque<Player> playerQueue = new LinkedList<>();
+    private final Scanner inputScanner = new Scanner(System.in);
     private  PlayingBoard board;
+
+    public Player winner;
 
     public void initilizeGame(){
 
@@ -24,15 +23,46 @@ public class TicTacToeGame {
 
     }
 
-    public void playGame(){
+    public GameStatus playGame(){
 
+        boolean noWinner = false;
+        while(!noWinner){
 
-        boolean noWinner = true;
+            Player currentPlayer = playerQueue.removeFirst();
+            board.showBoard();
+            List<Pair<Integer, Integer>> freeSpaces = board.getEmptyCells();
 
-        while(noWinner){
+            if(freeSpaces.isEmpty()){
+                noWinner = true;
+                continue;
+            }
 
+            System.out.println("Player " + currentPlayer.getName() + " - Please enter [row, column] :");
+            String input = inputScanner.nextLine();
+            String[] values = input.split(",");
+            int row = Integer.valueOf(values[0]);
+            int col = Integer.valueOf(values[1]);
+
+            boolean validMove = board.addPiece(row, col, currentPlayer.getPlayingPiece());
+            if(!validMove){
+                System.out.println("Not a valid move, Please try again!!");
+                playerQueue.addFirst(currentPlayer);
+                continue;
+            }
+
+            playerQueue.addLast(currentPlayer);
+
+            boolean isWinner = board.checkForWinner(row, col, currentPlayer.getPlayingPiece());
+            if (isWinner) {
+                board.showBoard();
+                winner = currentPlayer;
+                return GameStatus.WIN;
+            }
         }
+
+        return GameStatus.DRAW;
     }
+
 
     private Player[] getPlayers(){
         Player playerOne = new Player("Player 1", new XPlayingPiece());

@@ -17,6 +17,10 @@ public class PlayingBoard {
         this.board = new PlayingPiece[this.size][this.size];
     }
 
+    public int getSize(){
+        return size;
+    }
+
     public boolean addPiece( int r, int c, PlayingPiece piece){
         if(!validatePosition( r,  c)) return false;
         board[r][c] = piece;
@@ -42,6 +46,50 @@ public class PlayingBoard {
             }
         }
         return emptyCells;
+    }
+
+
+
+    public boolean checkForWinner(int row, int column, PlayingPiece pieceType){
+        boolean rowMatch = true;
+        boolean columnMatch = true;
+        boolean diagonalMatch = true;
+        boolean antiDiagonalMatch = true;
+
+        // Check Row
+        for (int i = 0; i < board.length; i++) {
+            if (board[row][i] == null || board[row][i].pieceType != pieceType) {
+                rowMatch = false;
+                break;
+            }
+        }
+
+        // Check Column
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][column] == null || board[i][column].pieceType != pieceType) {
+                columnMatch = false;
+                break;
+            }
+        }
+
+        // Check Diagonally
+        for (int i = 0, j = 0; i < board.length; i++, j++) {
+            if (board[i][j] == null || board[i][j].pieceType != pieceType) {
+                diagonalMatch = false;
+                break;
+            }
+        }
+
+        // Check Anti-Diagonally
+        for (int i = 0, j = board.length - 1; i < board.length; i++, j--) {
+            if (board[i][j] == null || board[i][j] != pieceType) {
+                antiDiagonalMatch = false;
+                break;
+            }
+        }
+
+        return rowMatch || columnMatch || diagonalMatch || antiDiagonalMatch;
+
     }
 
     private boolean validatePosition(int r, int c){
