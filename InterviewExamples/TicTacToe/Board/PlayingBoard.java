@@ -58,7 +58,7 @@ public class PlayingBoard {
 
         // Check Row
         for (int i = 0; i < board.length; i++) {
-            if (board[row][i] == null || board[row][i].pieceType != pieceType) {
+            if (board[row][i] == null ||!board[row][i].pieceType.equals(pieceType)) {
                 rowMatch = false;
                 break;
             }
@@ -66,7 +66,7 @@ public class PlayingBoard {
 
         // Check Column
         for (int i = 0; i < board.length; i++) {
-            if (board[i][column] == null || board[i][column].pieceType != pieceType) {
+            if (board[i][column] == null || !board[i][column].pieceType.equals(pieceType)) {
                 columnMatch = false;
                 break;
             }
@@ -74,7 +74,7 @@ public class PlayingBoard {
 
         // Check Diagonally
         for (int i = 0, j = 0; i < board.length; i++, j++) {
-            if (board[i][j] == null || board[i][j].pieceType != pieceType) {
+            if (board[i][j] == null || !board[i][j].pieceType.equals(pieceType) ) {
                 diagonalMatch = false;
                 break;
             }
