@@ -1,5 +1,7 @@
 package JavaCore.datastructures;
 
+import java.util.List;
+
 public class TestCode {
 
     public static void main(String[] args) {
@@ -15,25 +17,9 @@ public class TestCode {
         graph.addEdge(1, 3);
         graph.addEdge(3, 4);
 
-        System.out.println("\nAfter adding edges:");
-        graph.printGraph();
-
-        // Remove an edge
-        graph.removeEdge(0, 2);
-
-        System.out.println("\nAfter removing edge (0,2):");
-        graph.printGraph();
-
-        // Add a vertex
-        graph.addVertex();
-
-        System.out.println("\nAfter adding a vertex:");
-        graph.printGraph();
-
-        // Remove a vertex
-        graph.removeVertex(1);
-
-        System.out.println("\nAfter removing vertex 1:");
-        graph.printGraph();
+        List<Integer> dfs = graph.dfs();
+        for(int i: dfs){
+            System.out.println(i);
+        }
     }
 }

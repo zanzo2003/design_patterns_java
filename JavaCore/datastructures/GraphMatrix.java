@@ -5,6 +5,7 @@ package JavaCore.datastructures;
 Adjecency list representation of Graph
  */
 
+import java.util.*;
 
 public class GraphMatrix {
 
@@ -61,5 +62,26 @@ public class GraphMatrix {
             }
             System.out.println();
         }
+    }
+
+    public List<Integer> dfs(){
+
+        Stack<Integer> stk = new Stack<>();
+        Set<Integer> uniqueNodes = new LinkedHashSet<>();
+
+        stk.push(0);
+        uniqueNodes.add(0);
+        while(!stk.empty()){
+            int node = stk.pop();
+            if(!uniqueNodes.contains(node)) uniqueNodes.add(node);
+            for(int i = 0; i < this.numOfVertices; i++){
+                int currNode = this.adjecencyMatrix[node][i];
+                if(currNode == 1 && !uniqueNodes.contains(i)){
+                    stk.push(i);
+                }
+            }
+        }
+
+        return uniqueNodes.stream().toList();
     }
 }
