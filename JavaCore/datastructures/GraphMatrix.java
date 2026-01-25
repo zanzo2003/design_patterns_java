@@ -1,11 +1,17 @@
 package JavaCore.datastructures;
 
-public class Graph {
+
+/*
+Adjecency list representation of Graph
+ */
+
+
+public class GraphMatrix {
 
     private int[][] adjecencyMatrix;
     private int numOfVertices;
 
-    public Graph(int numberOfVertices){
+    public GraphMatrix(int numberOfVertices){
         this.numOfVertices = numberOfVertices;
         this.adjecencyMatrix = new int[numOfVertices][numOfVertices];
     }

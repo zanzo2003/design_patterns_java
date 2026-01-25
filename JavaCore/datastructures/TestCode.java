@@ -4,7 +4,7 @@ public class TestCode {
 
     public static void main(String[] args) {
 
-        Graph graph = new Graph(5);
+        GraphMatrix graph = new GraphMatrix(5);
 
         System.out.println("Initial Graph:");
         graph.printGraph();
