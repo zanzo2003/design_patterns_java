@@ -84,4 +84,24 @@ public class GraphMatrix {
 
         return uniqueNodes.stream().toList();
     }
+
+    public List<Integer> bfs(){
+
+        Queue<Integer> que = new ArrayDeque<>();
+        Set<Integer> uniqueNode = new LinkedHashSet<>();
+
+        que.add(0);
+        uniqueNode.add(0);
+
+        while( !que.isEmpty() ){
+            int currNode = que.poll();
+            if( !uniqueNode.contains(currNode) ) uniqueNode.add(currNode);
+
+            for(int i = 0; i < numOfVertices; i++){
+                if(adjecencyMatrix[currNode][i] == 1 && !uniqueNode.contains(i)) que.add(i);
+            }
+        }
+
+        return uniqueNode.stream().toList();
+    }
 }
