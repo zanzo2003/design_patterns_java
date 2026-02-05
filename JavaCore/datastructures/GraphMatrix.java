@@ -71,7 +71,7 @@ public class GraphMatrix {
 
         stk.push(0);
         uniqueNodes.add(0);
-        while(!stk.empty()){
+        while(!stk.isEmpty()){
             int node = stk.pop();
             if(!uniqueNodes.contains(node)) uniqueNodes.add(node);
             for(int i = 0; i < this.numOfVertices; i++){
