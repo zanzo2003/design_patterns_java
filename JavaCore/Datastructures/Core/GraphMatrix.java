@@ -1,4 +1,4 @@
-package JavaCore.datastructures;
+package JavaCore.Datastructures.Core;
 
 
 /*
