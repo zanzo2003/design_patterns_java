@@ -4,7 +4,7 @@ import JavaCore.Datastructures.Path.Unweighted;
 
 import java.util.*;
 
-class Test {
+class TestCode {
 
     public static void main(String[] args) {
         Unweighted solver = new Unweighted();

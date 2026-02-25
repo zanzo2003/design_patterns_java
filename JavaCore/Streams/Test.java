@@ -1,9 +1,7 @@
 package JavaCore.Streams;
 
 
-import java.time.Instant;
 import java.util.*;
-import java.time.Duration;
 import java.util.stream.Collectors;
 
 public class Test {
