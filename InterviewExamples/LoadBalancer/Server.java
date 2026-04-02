@@ -18,7 +18,7 @@ public class Server {
         return this.currentLoad;
     }
 
-    public void setCurrentLoad(int load ){
+    public void setCurrentLoad( int load ){
         this.currentLoad = load;
     }
 }

@@ -1,6 +1,6 @@
-package JavaCore.Datastructures;
+package JavaCore.Datastructures.Graph;
 
-import JavaCore.Datastructures.Path.Unweighted;
+import JavaCore.Datastructures.Graph.ShortedPath.Unweighted;
 
 import java.util.*;
 

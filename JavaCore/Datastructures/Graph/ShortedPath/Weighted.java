@@ -1,4 +1,4 @@
-package JavaCore.Datastructures.Path;
+package JavaCore.Datastructures.Graph.ShortedPath;
 
 
 
@@ -8,8 +8,8 @@ import java.util.*;
 
 /*
  This class implements the Algorithm to efficiently find the shortest path between 2 Points in a
- Directed Acyclic Weighted Graph using a variation of the Standard Topological Sort Algorithm for
- BFS ( also known as Kahn's Algorithm )
+ Directed Acyclic Weighted Graph using a variation of the Standard Topological Sort Algorithm impl
+ using BFS ( also known as Kahn's Algorithm )
 
 
  Steps for finding the shortest distance
@@ -17,7 +17,7 @@ import java.util.*;
   - Calculate the indegree of each node
   - Start with processing node with indegree 0
   - Follow Kahn's Algorithm
-  - After getting Sort Order, now initilize record of final distance with source as 0 and all others as Max
+  - After getting Sort Order, now initialize record of final distance with source as 0 and all others as Max
   - Start iterating over the Sort Order and fill distances
  */
 

@@ -1,7 +1,7 @@
-package JavaCore.Datastructures;
+package JavaCore.Datastructures.Graph;
 
 
-import JavaCore.Datastructures.Path.Weighted;
+import JavaCore.Datastructures.Graph.ShortedPath.Weighted;
 
 class TestWeighted {
 

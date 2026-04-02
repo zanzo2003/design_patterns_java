@@ -1,4 +1,4 @@
-package JavaCore.Datastructures.Core;
+package JavaCore.Datastructures.Graph.Core;
 
 
 import java.util.*;

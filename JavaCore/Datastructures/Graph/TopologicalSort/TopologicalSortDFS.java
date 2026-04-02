@@ -1,4 +1,4 @@
-package JavaCore.Datastructures.TopologicalSort;
+package JavaCore.Datastructures.Graph.TopologicalSort;
 
 
 /*

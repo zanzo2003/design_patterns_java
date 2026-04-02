@@ -1,4 +1,4 @@
-package JavaCore.Datastructures.Path;
+package JavaCore.Datastructures.Graph.ShortedPath;
 
 
 import java.util.*;
