@@ -2,7 +2,7 @@ package JavaCore.Datastructures.Graph.Dijkstra;
 
 import java.util.*;
 
-public class Test {
+public class TestSet {
 
     public static void main(String[] args) {
 
@@ -41,14 +41,14 @@ public class Test {
         // Source node
         int source = 0;
 
-        // Call Dijkstra
-        DijkstraPriorityQueueImpl dijkstra = new DijkstraPriorityQueueImpl();
+        // Call Dijkstra using Set implementation
+        DijkstraSetImpl dijkstra = new DijkstraSetImpl();
         List<Integer> result = dijkstra.impl(V, adj, source);
 
         // Print result
-        System.out.println("Shortest distances from source " + source + ":");
+        System.out.println("Shortest distances from source " + source + " (using DijkstraSetImpl):");
         for (int i = 0; i < result.size(); i++) {
-            System.out.println("Node " + i + " -> " + result.get(i));
+            System.out.println("Node " + i + " -> " + (result.get(i) == Integer.MAX_VALUE ? "INF" : result.get(i)));
         }
     }
 }

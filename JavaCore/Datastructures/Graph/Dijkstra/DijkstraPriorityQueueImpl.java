@@ -7,8 +7,31 @@ import java.util.PriorityQueue;
 import java.util.ArrayList;
 
 
+/**
+ * Provides an implementation of Dijkstra's shortest path algorithm using a priority queue.
+ *
+ * <p>This implementation calculates the minimum distance from a single source vertex to all other
+ * vertices in a weighted graph with non-negative edge weights. The time complexity is
+ * O( E log V), where V is the number of vertices and E is the number of edges.
+ *
+ * <p>The Dijsktra's algorithm can be used with a graph with negative weights because of the following 2 reasons
+ *      1. The problem states to find the shortest path from source node to
+ */
+
 public class DijkstraPriorityQueueImpl {
 
+
+    /**
+     * Computes the shortest distances from the source node to all other nodes in the graph.
+     *
+     * @param V the number of vertices in the graph
+     * @param adjacencyList the graph represented as an adjacency list, where {@code adjacencyList.get(i)}
+     *     returns a list of edges from vertex {@code i}, each edge represented as a list
+     *     containing {@code [neighborNode, weight]}
+     * @param source the index of the starting vertex
+     * @return a list where the index {@code i} contains the shortest distance from the source
+     *     to vertex {@code i}
+     */
 
     public List<Integer> impl( int V, List<List<List<Integer>>> adjacencyList, int source ){
 
