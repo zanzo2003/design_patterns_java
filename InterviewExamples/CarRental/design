@@ -1,0 +1,29 @@
+
+
+
+
+User flow ( this part explains how the user is going to interact with the platform)
+-----------------------------------------------------------------------------------
+
+ - The USER will open / log into the platform
+ - The USER will then select a location
+ - When the USER selects a location, we have to show the vehicle rentals STORE's in the location
+ - Each STORE will have multiple listing of VEHICLE available in that store
+ - When applying the START DATE and END DATE after selecting STORE , USER can see the available VEHICLE's
+ - The USER will then select the VEHICLE of choice and BOOK the VEHICLE for those dates
+ - When returning the VEHICLE , w.r.t the BOOKING id a INVOICE is generated
+ - Each INVOICE will have multiple PAYMENT options for the USER to pay.
+
+
+
+
+List of Classes for the Car Rental system
+-----------------------------------------
+
+1. USER - [ id , name , email , phoneNo ]
+2. VEHICLE - [ id , type , price/hr, status { available , booked , servicing } ]
+3. VEHICLE_INVENTORY_MANAGER - [ INVENTORY ( Map< vehicleId , vehicle > ) ]
+4. STORE  - [ id , Name , Address, List<Vehicle>]
+5. BOOKING - [ id , userId , vehicleId , fromDate , toDate , type { per day , per hr} , status { confirmed , in progress , completed , closed } ]
+6. BOOKING_REPOSITORY - [ Map < id , BOOKING> ]
+6. BOOKING_MANAGER - [ vehicle_inventory_manager , Booking_repository ] ( manager the booking, each store has it's own reservation manager )
