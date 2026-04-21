@@ -24,6 +24,6 @@ List of Classes for the Car Rental system
 2. VEHICLE - [ id , type , price/hr, status { available , booked , servicing } ]
 3. VEHICLE_INVENTORY_MANAGER - [ INVENTORY ( Map< vehicleId , vehicle > ) ]
 4. STORE  - [ id , Name , Address, List<Vehicle>]
-5. BOOKING - [ id , userId , vehicleId , fromDate , toDate , type { per day , per hr} , status { confirmed , in progress , completed , closed } ]
+5. BOOKING - [ id , userId , vehicleId , fromDate , toDate , type { per day , per hr} , status { confirmed , in progress , completed , cancelled } ]
 6. BOOKING_REPOSITORY - [ Map < id , BOOKING> ]
 6. BOOKING_MANAGER - [ vehicle_inventory_manager , Booking_repository ] ( manager the booking, each store has it's own reservation manager )

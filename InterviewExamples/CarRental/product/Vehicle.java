@@ -5,6 +5,9 @@ import InterviewExamples.CarRental.constants.VehicleType;
 
 import java.util.UUID;
 
+
+
+
 public class Vehicle {
 
     private String vehicleId;
