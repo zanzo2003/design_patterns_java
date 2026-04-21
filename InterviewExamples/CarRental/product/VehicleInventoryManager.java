@@ -25,13 +25,13 @@ public class VehicleInventoryManager {
         this.reservationRepository = repository;
     }
 
-    public boolean isVehicleAvailable( String vehicleId , LocalDate from , LocalDate to ){}
+    public boolean isVehicleAvailable( String vehicleId , LocalDate from , LocalDate to ){ return false; }
 
-    public boolean reserveVehicle( String vehicleId , String reservationId , LocalDate from , LocalDate to ){}
+    public boolean reserveVehicle( String vehicleId , String reservationId , LocalDate from , LocalDate to ){ return false;}
 
-    public boolean releaseVehicle( String vehicleId , String reservationId ){}
+    public boolean releaseVehicle( String vehicleId , String reservationId ){ return false;}
 
-    public List<Vehicle> getAvailableVehicles( VehicleType type , LocalDate from , LocalDate to ){}
+    public List<Vehicle> getAvailableVehicles( VehicleType type , LocalDate from , LocalDate to ){ return null; }
 
 
 }
