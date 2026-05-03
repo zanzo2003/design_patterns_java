@@ -1,8 +1,5 @@
 package InterviewExamples.CarRental.reservation;
 
-import InterviewExamples.CarRental.constants.ReservationStatus;
-import InterviewExamples.CarRental.constants.ReservationType;
-
 import java.time.LocalDate;
 import java.util.UUID;
 

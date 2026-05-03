@@ -16,7 +16,7 @@ public class UnionFind {
         }
     }
 
-    // find operation with path compression - this is used to find which component is a @param node part of.
+    // find operation with path compression - this is used to find which component is @param node part of.
     public int find( int node ){
         if( parent[ node ] != node ){
             parent[ node ] = find( parent[ node ] ); // compressing the path for further node is get directly the component head.

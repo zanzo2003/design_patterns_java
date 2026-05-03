@@ -1,8 +1,5 @@
 package InterviewExamples.CarRental.product;
 
-import InterviewExamples.CarRental.constants.VehicleStatus;
-import InterviewExamples.CarRental.constants.VehicleType;
-
 import java.util.UUID;
 
 

@@ -1,4 +1,4 @@
-package JavaCore.Datastructures.Graph.ShortedPath;
+package JavaCore.Datastructures.Graph.ShortestPath;
 
 
 

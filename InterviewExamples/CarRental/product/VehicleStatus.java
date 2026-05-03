@@ -1,4 +1,4 @@
-package InterviewExamples.CarRental.constants;
+package InterviewExamples.CarRental.product;
 
 
 /*
